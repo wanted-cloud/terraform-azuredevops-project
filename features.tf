@@ -1,5 +1,5 @@
 resource "azuredevops_project_features" "this" {
-  project_id = azuredevops_project.example.id
+  project_id = azuredevops_project.this.id
   features   = var.features
 
   timeouts {

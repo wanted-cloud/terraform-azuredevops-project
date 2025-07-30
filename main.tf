@@ -12,7 +12,7 @@ resource "azuredevops_project" "this" {
   work_item_template = var.work_item_template
 
   // Set features blank as they will be not be managed by this resource
-  features = {}
+  //features = {}
   // Ignore changes to features as they will be not be managed by this resource
   lifecycle {
     ignore_changes = [
