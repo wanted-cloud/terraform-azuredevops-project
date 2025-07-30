@@ -17,13 +17,13 @@ Terraform building block helping with management of Azure DevOps project and rel
 
 The following requirements are needed by this module:
 
-- <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) (>= 0.1.0)
+- <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) (>= 1.12.0)
 
 ## Providers
 
 The following providers are used by this module:
 
-- <a name="provider_azuredevops"></a> [azuredevops](#provider\_azuredevops) (>= 0.1.0)
+- <a name="provider_azuredevops"></a> [azuredevops](#provider\_azuredevops) (>= 1.12.0)
 
 ## Required Inputs
 
