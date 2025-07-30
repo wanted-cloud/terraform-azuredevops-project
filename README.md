@@ -54,13 +54,13 @@ Description: Features to enable for the Azure DevOps project. This is a map wher
 Type:
 
 ```hcl
-optional(object({
+object({
     testplans    = optional(string, "disabled")
     artifacts    = optional(string, "enabled")
     pipelines    = optional(string, "enabled")
     boards       = optional(string, "enabled")
     repositories = optional(string, "enabled")
-  }))
+  })
 ```
 
 Default: `{}`
