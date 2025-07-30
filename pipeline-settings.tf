@@ -1,4 +1,5 @@
 resource "azuredevops_project_pipeline_settings" "this" {
+  count      = var.features != {} ? 1 : 0
   project_id = azuredevops_project.this.id
 
   enforce_job_scope                    = var.pipeline_settings.enforce_job_scope

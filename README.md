@@ -54,13 +54,13 @@ Description: Features to enable for the Azure DevOps project. This is a map wher
 Type:
 
 ```hcl
-object({
+optional(object({
     testplans    = optional(string, "disabled")
     artifacts    = optional(string, "enabled")
     pipelines    = optional(string, "enabled")
     boards       = optional(string, "enabled")
     repositories = optional(string, "enabled")
-  })
+  }))
 ```
 
 Default: `{}`
@@ -149,6 +149,10 @@ The following outputs are exported:
 ### <a name="output_features"></a> [features](#output\_features)
 
 Description: The features of the Azure DevOps project managed by this module.
+
+### <a name="output_pipeline_settings"></a> [pipeline\_settings](#output\_pipeline\_settings)
+
+Description: The pipeline settings of the Azure DevOps project.
 
 ### <a name="output_project"></a> [project](#output\_project)
 

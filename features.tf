@@ -1,4 +1,5 @@
 resource "azuredevops_project_features" "this" {
+  count      = var.features != {} ? 1 : 0
   project_id = azuredevops_project.this.id
   features   = var.features
 
