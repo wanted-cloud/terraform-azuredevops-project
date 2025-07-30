@@ -1,9 +1,17 @@
 /*
- * # wanted-cloud/terraform-module-template
+ * # wanted-cloud/terraform-azuredevops-project
  * 
- * This repository represents a template for a Terraform building block module as we think it should be done, so it's for sure opinionated but in our eyes simple and powerful. Feel free to use or contribute.
+ * Terraform building block helping with management of Azure DevOps project and related resources.
  */
 
-/*
- * Here is perfect place for you main resource which should be created by this module. Use "this" as name for the main resource and its dependencies.
- */
+resource "azuredevops_project" "this" {
+  name               = "Example Project"
+  visibility         = "private"
+  version_control    = "Git"
+  work_item_template = "Agile"
+  description        = "Managed by Terraform"
+  features = {
+    testplans = "disabled"
+    artifacts = "disabled"
+  }
+}
