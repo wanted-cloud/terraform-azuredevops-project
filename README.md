@@ -1,7 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
-# wanted-cloud/terraform-module-template
+# wanted-cloud/terraform-azuredevops-project
 
-This repository represents a template for a Terraform building block module as we think it should be done, so it's for sure opinionated but in our eyes simple and powerful. Feel free to use or contribute.
+Terraform building block helping with management of Azure DevOps project and related resources.
 
 ## Table of contents
 
@@ -15,19 +15,37 @@ This repository represents a template for a Terraform building block module as w
 
 ## Requirements
 
-No requirements.
+The following requirements are needed by this module:
+
+- <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) (>= 0.1.0)
 
 ## Providers
 
-No providers.
+The following providers are used by this module:
+
+- <a name="provider_azuredevops"></a> [azuredevops](#provider\_azuredevops) (>= 0.1.0)
 
 ## Required Inputs
 
-No required inputs.
+The following input variables are required:
+
+### <a name="input_name"></a> [name](#input\_name)
+
+Description: Name of the Azure DevOps project.
+
+Type: `string`
 
 ## Optional Inputs
 
 The following input variables are optional (have default values):
+
+### <a name="input_description"></a> [description](#input\_description)
+
+Description: Description of the Azure DevOps project.
+
+Type: `string`
+
+Default: `""`
 
 ### <a name="input_metadata"></a> [metadata](#input\_metadata)
 
@@ -55,13 +73,43 @@ object({
 
 Default: `{}`
 
+### <a name="input_version_control"></a> [version\_control](#input\_version\_control)
+
+Description: Version control system for the Azure DevOps project. Can be 'Git' or 'TFVC'.
+
+Type: `string`
+
+Default: `"Git"`
+
+### <a name="input_visibility"></a> [visibility](#input\_visibility)
+
+Description: Visibility of the Azure DevOps project. Can be 'private' or 'public'.
+
+Type: `string`
+
+Default: `"private"`
+
+### <a name="input_work_item_template"></a> [work\_item\_template](#input\_work\_item\_template)
+
+Description: Work item template for the Azure DevOps project. Can be 'Agile', 'Scrum', or 'CMMI'.
+
+Type: `string`
+
+Default: `"WANTED.solutions CMMI v3"`
+
 ## Outputs
 
-No outputs.
+The following outputs are exported:
+
+### <a name="output_project"></a> [project](#output\_project)
+
+Description: The Azure DevOps project created by this module.
 
 ## Resources
 
-No resources.
+The following resources are used by this module:
+
+- [azuredevops_project.this](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project) (resource)
 
 ## Usage
 
