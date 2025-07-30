@@ -47,6 +47,24 @@ Type: `string`
 
 Default: `""`
 
+### <a name="input_features"></a> [features](#input\_features)
+
+Description: Features to enable for the Azure DevOps project. This is a map where keys are feature names and values are their states ('enabled' or 'disabled').
+
+Type:
+
+```hcl
+object({
+    testplans    = optional(string, "disabled")
+    artifacts    = optional(string, "enabled")
+    pipelines    = optional(string, "enabled")
+    boards       = optional(string, "enabled")
+    repositories = optional(string, "enabled")
+  })
+```
+
+Default: `{}`
+
 ### <a name="input_metadata"></a> [metadata](#input\_metadata)
 
 Description: Metadata definitions for the module, this is optional construct allowing override of the module defaults defintions of validation expressions, error messages, resource timeouts and default tags.
@@ -101,6 +119,10 @@ Default: `"WANTED.solutions CMMI v3"`
 
 The following outputs are exported:
 
+### <a name="output_features"></a> [features](#output\_features)
+
+Description: The features of the Azure DevOps project managed by this module.
+
 ### <a name="output_project"></a> [project](#output\_project)
 
 Description: The Azure DevOps project created by this module.
@@ -110,6 +132,7 @@ Description: The Azure DevOps project created by this module.
 The following resources are used by this module:
 
 - [azuredevops_project.this](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project) (resource)
+- [azuredevops_project_features.this](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project_features) (resource)
 
 ## Usage
 
@@ -131,6 +154,9 @@ The minimal usage for the module is as follows:
 ```hcl
 module "template" {
     source = "../.."
+
+    name   = "example-project"
+    description = "This is an example Azure DevOps project managed by the wanted-cloud Terraform module."
 }
 ```
 ## Contributing
