@@ -39,3 +39,22 @@ variable "features" {
   default = {}
 
 }
+
+variable "tags" {
+  description = "List of tags to be applied to the Azure DevOps project."
+  type        = list(string)
+  default     = []
+}
+
+variable "pipeline_settings" {
+  description = "Pipeline settings for the Azure DevOps project."
+  type = object({
+    enforce_job_scope                    = optional(bool, false)
+    enforce_referenced_repo_scoped_token = optional(bool, false)
+    enforce_settable_var                 = optional(bool, false)
+    publish_pipeline_metadata            = optional(bool, false)
+    status_badges_are_private            = optional(bool, true)
+    enforce_job_scope_for_release        = optional(bool, false)
+  })
+  default = {}
+}

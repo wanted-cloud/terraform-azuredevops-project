@@ -91,6 +91,33 @@ object({
 
 Default: `{}`
 
+### <a name="input_pipeline_settings"></a> [pipeline\_settings](#input\_pipeline\_settings)
+
+Description: Pipeline settings for the Azure DevOps project.
+
+Type:
+
+```hcl
+object({
+    enforce_job_scope                    = optional(bool, false)
+    enforce_referenced_repo_scoped_token = optional(bool, false)
+    enforce_settable_var                 = optional(bool, false)
+    publish_pipeline_metadata            = optional(bool, false)
+    status_badges_are_private            = optional(bool, true)
+    enforce_job_scope_for_release        = optional(bool, false)
+  })
+```
+
+Default: `{}`
+
+### <a name="input_tags"></a> [tags](#input\_tags)
+
+Description: List of tags to be applied to the Azure DevOps project.
+
+Type: `list(string)`
+
+Default: `[]`
+
 ### <a name="input_version_control"></a> [version\_control](#input\_version\_control)
 
 Description: Version control system for the Azure DevOps project. Can be 'Git' or 'TFVC'.
@@ -127,12 +154,18 @@ Description: The features of the Azure DevOps project managed by this module.
 
 Description: The Azure DevOps project created by this module.
 
+### <a name="output_tags"></a> [tags](#output\_tags)
+
+Description: The tags applied to the Azure DevOps project.
+
 ## Resources
 
 The following resources are used by this module:
 
 - [azuredevops_project.this](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project) (resource)
 - [azuredevops_project_features.this](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project_features) (resource)
+- [azuredevops_project_pipeline_settings.this](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project_pipeline_settings) (resource)
+- [azuredevops_project_tags.this](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project_tags) (resource)
 
 ## Usage
 
