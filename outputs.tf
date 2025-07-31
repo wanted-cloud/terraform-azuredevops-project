@@ -15,5 +15,5 @@ output "pipeline_settings" {
 
 output "tags" {
   description = "The tags applied to the Azure DevOps project."
-  value       = azuredevops_project_tags.this
+  value       = azuredevops_project_tags.this[0]
 }

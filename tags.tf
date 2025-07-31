@@ -1,4 +1,5 @@
 resource "azuredevops_project_tags" "this" {
+  count      = length(var.tags) > 0 ? 1 : 0
   project_id = azuredevops_project.this.id
   tags       = var.tags
 
