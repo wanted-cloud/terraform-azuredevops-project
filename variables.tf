@@ -30,7 +30,7 @@ variable "work_item_template" {
 variable "features" {
   description = "Features to enable for the Azure DevOps project. This is a map where keys are feature names and values are their states ('enabled' or 'disabled')."
   type = object({
-    testplans    = optional(string, "disabled")
+    testplans    = optional(string, "enabled")
     artifacts    = optional(string, "enabled")
     pipelines    = optional(string, "enabled")
     boards       = optional(string, "enabled")

@@ -55,7 +55,7 @@ Type:
 
 ```hcl
 object({
-    testplans    = optional(string, "disabled")
+    testplans    = optional(string, "enabled")
     artifacts    = optional(string, "enabled")
     pipelines    = optional(string, "enabled")
     boards       = optional(string, "enabled")
